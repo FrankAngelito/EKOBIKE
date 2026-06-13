@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Estaciones disponibles: título + lista (RecyclerView) -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#F5F5F5">
+
+    <!-- Encabezado verde -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="#2E7D32"
+        android:padding="20dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Estaciones disponibles"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:textColor="#FFFFFF" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Elige dónde retirar tu bicicleta"
+            android:textSize="14sp"
+            android:textColor="#C8E6C9"
+            android:layout_marginTop="4dp" />
+
+    </LinearLayout>
+
+    <!-- La lista. Se llena desde Java con un adapter.
+         layout_height="0dp" + weight="1" hace que ocupe todo el resto. -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerEstaciones"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:padding="12dp"
+        android:clipToPadding="false" />
+
+</LinearLayout>

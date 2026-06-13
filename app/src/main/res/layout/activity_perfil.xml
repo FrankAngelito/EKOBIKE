@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Perfil de usuario: foto, nombre, correo y botón de cerrar sesión -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    android:background="#F5F5F5"
+    android:padding="28dp">
+
+    <!-- Título de la pantalla -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Mi Perfil"
+        android:textSize="26sp"
+        android:textStyle="bold"
+        android:textColor="#2E7D32"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="32dp" />
+
+    <!-- Foto de perfil simulada (ImageView con ícono de persona) -->
+    <ImageView
+        android:id="@+id/imgPerfil"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:src="@android:drawable/ic_menu_myplaces"
+        android:background="#FFFFFF"
+        android:padding="24dp"
+        android:contentDescription="Foto de perfil"
+        android:layout_marginBottom="24dp" />
+
+    <!-- Nombre del usuario -->
+    <TextView
+        android:id="@+id/txtNombreUsuario"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Franklin Toro"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:textColor="#1F1F1F" />
+
+    <!-- Correo del usuario -->
+    <TextView
+        android:id="@+id/txtCorreoUsuario"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:layout_marginBottom="40dp"
+        android:text="fatoro@ejemplo.com"
+        android:textColor="#757575"
+        android:textSize="16sp" />
+
+    <!-- Tarjeta con dato extra: viajes realizados -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="#FFFFFF"
+        android:padding="18dp"
+        android:layout_marginBottom="32dp">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Viajes realizados"
+            android:textSize="16sp"
+            android:textColor="#1F1F1F" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="12"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="#2E7D32" />
+
+    </LinearLayout>
+
+    <!-- Botón de cerrar sesión -->
+    <Button
+        android:id="@+id/btnCerrarSesion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Cerrar sesión"
+        android:textSize="16sp"
+        android:textColor="#FFFFFF"
+        android:backgroundTint="#D32F2F"
+        android:padding="14dp" />
+
+</LinearLayout>

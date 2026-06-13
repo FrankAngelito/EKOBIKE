@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Viaje en curso: cronómetro, datos de la bici y botón Terminar Viaje -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="#F5F5F5"
+    android:padding="28dp">
+
+    <!-- Título -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Viaje en curso"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:textColor="#2E7D32"
+        android:layout_marginBottom="8dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="¡Disfruta tu recorrido!"
+        android:textSize="14sp"
+        android:textColor="#757575"
+        android:layout_marginBottom="40dp" />
+
+    <!-- Cronómetro simulado (es un TextView grande con el tiempo).
+         Desde Java se irá actualizando el texto cada segundo. -->
+    <TextView
+        android:id="@+id/txtCronometro"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="00:00:00"
+        android:textSize="56sp"
+        android:textStyle="bold"
+        android:textColor="#1F1F1F" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tiempo transcurrido"
+        android:textSize="14sp"
+        android:textColor="#757575"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="40dp" />
+
+    <!-- Tarjeta con los datos de la bicicleta actual -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="#FFFFFF"
+        android:padding="20dp"
+        android:layout_marginBottom="40dp">
+
+        <!-- Fila: Bicicleta -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="12dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Bicicleta"
+                android:textSize="15sp"
+                android:textColor="#757575" />
+
+            <TextView
+                android:id="@+id/txtBiciActual"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Bici #7"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:textColor="#1F1F1F" />
+
+        </LinearLayout>
+
+        <!-- Fila: Estación de salida -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="12dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Estación de salida"
+                android:textSize="15sp"
+                android:textColor="#757575" />
+
+            <TextView
+                android:id="@+id/txtEstacionSalida"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Cumbayá"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:textColor="#1F1F1F" />
+
+        </LinearLayout>
+
+        <!-- Fila: Tarifa -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Tarifa"
+                android:textSize="15sp"
+                android:textColor="#757575" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="$1.99 / hora"
+                android:textColor="#2E7D32"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!-- Botón GRANDE de terminar viaje (rojo, acción importante) -->
+    <Button
+        android:id="@+id/btnTerminarViaje"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Terminar viaje"
+        android:textSize="18sp"
+        android:textColor="#FFFFFF"
+        android:backgroundTint="#D32F2F"
+        android:padding="18dp" />
+
+</LinearLayout>
