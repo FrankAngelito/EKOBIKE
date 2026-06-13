@@ -10,25 +10,17 @@
 
     <!-- Título de la pantalla -->
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Mi Perfil"
-        android:textSize="26sp"
-        android:textStyle="bold"
-        android:textColor="#2E7D32"
-        android:layout_marginTop="20dp"
-        android:layout_marginBottom="32dp" />
-
-    <!-- Foto de perfil simulada (ImageView con ícono de persona) -->
-    <ImageView
-        android:id="@+id/imgPerfil"
+        android:id="@+id/txtInicial"
         android:layout_width="120dp"
         android:layout_height="120dp"
-        android:src="@android:drawable/ic_menu_myplaces"
-        android:background="#FFFFFF"
-        android:padding="24dp"
-        android:contentDescription="Foto de perfil"
+        android:background="@drawable/bg_circulo_perfil"
+        android:gravity="center"
+        android:text="F"
+        android:textColor="#FFFFFF"
+        android:textSize="48sp"
+        android:textStyle="bold"
         android:layout_marginBottom="24dp" />
+
 
     <!-- Nombre del usuario -->
     <TextView

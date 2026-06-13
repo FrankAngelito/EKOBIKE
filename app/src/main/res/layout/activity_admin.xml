@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Administración (rol admin): registrar nueva bicicleta.
+     Campo de código + Spinner de estado + botón registrar -->
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F5F5F5">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Encabezado oscuro (zona de administrador) -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="#37474F"
+            android:padding="20dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Panel de administrador"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:textColor="#FFFFFF" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Registrar nueva bicicleta"
+                android:textSize="14sp"
+                android:textColor="#B0BEC5"
+                android:layout_marginTop="4dp" />
+
+        </LinearLayout>
+
+        <!-- Contenido del formulario -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="28dp">
+
+            <!-- Etiqueta + campo: código de la bicicleta -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Código de la bicicleta"
+                android:textSize="14sp"
+                android:textColor="#424242"
+                android:layout_marginBottom="6dp" />
+
+            <EditText
+                android:id="@+id/edtCodigoBici"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Ej: BICI-016"
+                android:inputType="text"
+                android:background="#FFFFFF"
+                android:padding="16dp"
+                android:layout_marginBottom="20dp" />
+
+            <!-- Etiqueta + campo: ubicación -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Estación"
+                android:textSize="14sp"
+                android:textColor="#424242"
+                android:layout_marginBottom="6dp" />
+
+            <EditText
+                android:id="@+id/edtEstacionBici"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Ej: Cumbayá"
+                android:inputType="text"
+                android:background="#FFFFFF"
+                android:padding="16dp"
+                android:layout_marginBottom="20dp" />
+
+            <!-- Etiqueta + Spinner: estado de la bicicleta.
+                 El Spinner es la lista desplegable. Sus opciones
+                 (Disponible / Mantenimiento) se cargan desde Java o strings.xml -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Estado"
+                android:textSize="14sp"
+                android:textColor="#424242"
+                android:layout_marginBottom="6dp" />
+
+            <Spinner
+                android:id="@+id/spinnerEstado"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#FFFFFF"
+                android:padding="16dp"
+                android:layout_marginBottom="32dp" />
+
+            <!-- Botón registrar -->
+            <Button
+                android:id="@+id/btnRegistrarBici"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Registrar bicicleta"
+                android:textSize="16sp"
+                android:textColor="#FFFFFF"
+                android:backgroundTint="#37474F"
+                android:padding="14dp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>

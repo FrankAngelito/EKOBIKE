@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Pagos: ingresar tarjeta (número, fecha, CVV) y guardar método de pago -->
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -11,11 +10,10 @@
         android:orientation="vertical"
         android:padding="28dp">
 
-        <!-- Título -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Método de pago"
+            android:text="Metodo de pago"
             android:textSize="26sp"
             android:textStyle="bold"
             android:textColor="#2E7D32"
@@ -28,7 +26,36 @@
             android:textSize="14sp"
             android:textColor="#757575"
             android:layout_marginTop="6dp"
-            android:layout_marginBottom="28dp" />
+            android:layout_marginBottom="20dp" />
+
+        <!-- Recuadro con el TOTAL a pagar -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:background="#E8F5E9"
+            android:padding="18dp"
+            android:layout_marginBottom="24dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Total a pagar"
+                android:textSize="16sp"
+                android:textColor="#1F1F1F" />
+
+            <TextView
+                android:id="@+id/txtTotalPagar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="$0.00"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:textColor="#2E7D32" />
+
+        </LinearLayout>
 
         <!-- Tarjeta visual simulada -->
         <LinearLayout
@@ -37,12 +64,12 @@
             android:orientation="vertical"
             android:background="#2E7D32"
             android:padding="24dp"
-            android:layout_marginBottom="28dp">
+            android:layout_marginBottom="24dp">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Tarjeta de crédito"
+                android:text="Tarjeta de credito o debito"
                 android:textSize="14sp"
                 android:textColor="#C8E6C9" />
 
@@ -57,11 +84,10 @@
 
         </LinearLayout>
 
-        <!-- Etiqueta + campo: número de tarjeta -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Número de tarjeta"
+            android:text="Numero de tarjeta"
             android:textSize="14sp"
             android:textColor="#424242"
             android:layout_marginBottom="6dp" />
@@ -76,14 +102,12 @@
             android:padding="16dp"
             android:layout_marginBottom="16dp" />
 
-        <!-- Fila con dos campos lado a lado: fecha y CVV -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:layout_marginBottom="28dp">
 
-            <!-- Fecha de vencimiento (izquierda) -->
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -110,7 +134,6 @@
 
             </LinearLayout>
 
-            <!-- CVV (derecha) -->
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -139,16 +162,15 @@
 
         </LinearLayout>
 
-        <!-- Botón guardar -->
         <Button
             android:id="@+id/btnGuardarPago"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Guardar método de pago"
+            android:text="Pagar ahora"
             android:textSize="16sp"
             android:textColor="#FFFFFF"
             android:backgroundTint="#2E7D32"
-            android:padding="14dp" />
+            android:padding="16dp" />
 
     </LinearLayout>
 

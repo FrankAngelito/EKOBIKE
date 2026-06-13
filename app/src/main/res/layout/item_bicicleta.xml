@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:gravity="center_vertical"
+    android:background="#FFFFFF"
+    android:padding="18dp"
+    android:layout_margin="6dp">
+
+    <!-- Bloque izquierdo: nombre de la bici + estado -->
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/txtNombreBici"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Bici #1"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="#1F1F1F" />
+
+        <TextView
+            android:id="@+id/txtEstadoBici"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="$1.99/hora · Con Casco"
+            android:textSize="14sp"
+            android:textColor="#757575"
+            android:layout_marginTop="2dp" />
+
+    </LinearLayout>
+
+    <!-- Pastilla de estado a la derecha -->
+    <TextView
+        android:id="@+id/txtPastillaBici"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Disponible"
+        android:textColor="#FFFFFF"
+        android:background="#2E7D32"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        android:paddingStart="14dp"
+        android:paddingEnd="14dp"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp" />
+
+</LinearLayout>

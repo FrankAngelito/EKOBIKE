@@ -1,45 +1,229 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Estaciones disponibles: título + lista (RecyclerView) -->
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<!-- ScrollView: permite scroll de toda la pantalla (estaciones + mapa).
+     Solo puede tener UN hijo directo: el LinearLayout de abajo. -->
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:background="#F5F5F5">
 
-    <!-- Encabezado verde -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:background="#2E7D32"
-        android:padding="20dp">
+        android:orientation="vertical">
 
+        <!-- Encabezado verde -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="#2E7D32"
+            android:paddingTop="48dp"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
+            android:paddingBottom="20dp">
+
+            <!-- Fila: circulo con inicial + saludo -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:id="@+id/txtInicialMini"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:background="@drawable/bg_circulo_blanco"
+                    android:gravity="center"
+                    android:text="F"
+                    android:textColor="#2E7D32"
+                    android:textSize="22sp"
+                    android:textStyle="bold"
+                    android:layout_marginEnd="12dp"
+                    android:clickable="true"
+                    android:focusable="true" />
+
+                <TextView
+                    android:id="@+id/txtSaludo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Hola"
+                    android:textSize="22sp"
+                    android:textStyle="bold"
+                    android:textColor="#FFFFFF" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/txtBienvenida"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Que gusto tenerte de vuelta"
+                android:textSize="14sp"
+                android:textColor="#C8E6C9"
+                android:layout_marginTop="6dp" />
+
+            <!-- Fila: titulo + boton Salir -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginTop="16dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Estaciones disponibles"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="#FFFFFF" />
+
+                <TextView
+                    android:id="@+id/txtSalir"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Salir"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:textColor="#FFFFFF"
+                    android:background="#1B5E20"
+                    android:paddingStart="18dp"
+                    android:paddingEnd="18dp"
+                    android:paddingTop="8dp"
+                    android:paddingBottom="8dp"
+                    android:clickable="true"
+                    android:focusable="true" />
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btnAdministrar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dp"
+                android:backgroundTint="#FFFFFF"
+                android:text="Administrar bicicletas"
+                android:textColor="#2E7D32"
+                android:visibility="invisible" />
+
+        </LinearLayout>
+
+        <!-- Lista de estaciones. nestedScrollingEnabled=false para que
+             el scroll lo maneje el ScrollView de afuera, no la lista. -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerEstaciones"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:nestedScrollingEnabled="false"
+            android:padding="12dp"
+            android:clipToPadding="false" />
+
+        <!-- Seccion del mapa -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Estaciones disponibles"
-            android:textSize="22sp"
+            android:text="Mapa de estaciones"
+            android:textSize="16sp"
             android:textStyle="bold"
-            android:textColor="#FFFFFF" />
+            android:textColor="#1F1F1F"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Elige dónde retirar tu bicicleta"
-            android:textSize="14sp"
-            android:textColor="#C8E6C9"
-            android:layout_marginTop="4dp" />
+        <!-- Contenedor del mapa: la imagen de fondo + marcadores encima.
+             RelativeLayout permite poner cosas en posiciones especificas. -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="280dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="20dp">
+
+            <!-- La imagen del mapa, llena todo el contenedor -->
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/mapa_quito"
+                android:scaleType="centerCrop"
+                android:contentDescription="Mapa de Quito" />
+
+            <!-- Marcador: Cumbaya (arriba derecha) -->
+
+            <!-- Marcador: La Carolina (centro) -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="120dp"
+                android:layout_marginEnd="43dp"
+                android:background="#2E7D32"
+                android:padding="6dp"
+                android:text="Cumbaya"
+                android:textColor="#FFFFFF"
+                android:textSize="11sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="La Carolina"
+                android:textSize="11sp"
+                android:textStyle="bold"
+                android:textColor="#FFFFFF"
+                android:background="#2E7D32"
+                android:padding="6dp" />
+
+            <!-- Marcador: Valle de los Chillos (abajo derecha) -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginBottom="30dp"
+                android:layout_marginEnd="40dp"
+                android:text="Valle de los Chillos"
+                android:textSize="11sp"
+                android:textStyle="bold"
+                android:textColor="#FFFFFF"
+                android:background="#2E7D32"
+                android:padding="6dp" />
+
+            <!-- Marcador: Moran Valverde (abajo izquierda) -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentStart="true"
+                android:layout_marginBottom="40dp"
+                android:layout_marginStart="20dp"
+                android:text="Moran Valverde"
+                android:textSize="11sp"
+                android:textStyle="bold"
+                android:textColor="#FFFFFF"
+                android:background="#2E7D32"
+                android:padding="6dp" />
+
+            <!-- Marcador: Calderon (arriba izquierda) -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="200dp"
+                android:layout_marginTop="17dp"
+                android:background="#2E7D32"
+                android:padding="6dp"
+                android:text="Calderon"
+                android:textColor="#FFFFFF"
+                android:textSize="11sp"
+                android:textStyle="bold" />
+
+        </RelativeLayout>
 
     </LinearLayout>
 
-    <!-- La lista. Se llena desde Java con un adapter.
-         layout_height="0dp" + weight="1" hace que ocupe todo el resto. -->
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerEstaciones"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:padding="12dp"
-        android:clipToPadding="false" />
-
-</LinearLayout>
+</ScrollView>
